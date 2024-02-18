@@ -1,0 +1,5 @@
+path: "/content/grive/MyDrive/dataset/data"
+train: "images/train"
+val: "images/train"
+nc: 6
+names: ['mobile phone', 'computer mouse', 'computer keyboard', 'printer', 'computer monitor', 'headphones']

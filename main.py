@@ -23,17 +23,20 @@ def detect(image):
     #cv.putText(image,"Predd D to Exit",(200,200), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
   return  image
 
-video=cv.VideoCapture(0)
-
-while True:
-  ret , frame = video.read()
-  frame=detect(frame)
-  #cv2_imshow(image)
-  
-  cv.imshow("E-Waste Detection",frame)
-  
-  if cv.waitKey(1)&0xFF==ord('d'):
-    break
-video.release()
-cv.destroyAllWindows()
-
+def video_capture():
+  video=cv.VideoCapture(0)
+  while True:
+    ret , frame = video.read()
+    if not ret:
+      break
+    
+    frame=detect(frame)
+    #cv2_imshow(image)
+    
+    cv.imshow("E-Waste Detection",frame)
+    
+    
+    if cv.waitKey(1)&0xFF==ord('d'):
+      break
+  video.release()
+  cv.destroyAllWindows()
